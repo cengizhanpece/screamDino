@@ -46,6 +46,8 @@
                         }
                         var average = values / length;
                         canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+                        canvasContext.font = "20px Georgia";
+                        canvasContext.fillText("Volume: " + String(Math.floor(average)), canvas.width - 150, 30);
                         Dino.draw();
                         
                         if(average > 25 ){

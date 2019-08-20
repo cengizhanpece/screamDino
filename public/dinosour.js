@@ -21,6 +21,9 @@ class Dinosour {
             let pos = this.frame * this.width;
             this.ctx.drawImage(this.img, pos, 0, this.width, this.height, this.x, this.y, this.width, this.height);
         }
+        if(this.jumping){
+            this.ctx.fillText("Jumped", this.x, this.y - 10);
+        }
     }
 
     jump(){
