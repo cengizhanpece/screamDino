@@ -1,7 +1,7 @@
     // Courtesy www.0AV.com, LGPL license or as set by forked host, Travis Holliday, https://codepen.io/travisholliday/pen/gyaJk (modified by fixing for browser security change)
     let canvas = document.getElementById("canvas");
-    canvas.width = 800;
-    canvas.height = 800;
+    canvas.width = 400;
+    canvas.height = 300;
     canvasContext = canvas.getContext("2d");
     var spriteImage = new Image();
     spriteImage.src = "dino.png";
