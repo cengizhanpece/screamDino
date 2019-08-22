@@ -13,17 +13,18 @@ class Dinosour {
         this.handler;
     }
 
-    draw() {
-        if(!this.started) this.ctx.drawImage(this.img, 0, 0, 57, 60, 0, 0, 57, 60);
-        else {
-            if (this.frame >= 6) this.frame = 1;
-            else this.frame = this.frame + 1;
-            let pos = this.frame * this.width;
-            this.ctx.drawImage(this.img, pos, 0, this.width, this.height, this.x, this.y, this.width, this.height);
-        }
+    draw(){   
+        if (this.frame >= 6) this.frame = 1;
+        else this.frame = this.frame + 1;
+        let pos = this.frame * this.width;
+        this.ctx.drawImage(this.img, pos, 0, this.width, this.height, this.x, this.y, this.width, this.height);
         if(this.jumping){
             this.ctx.fillText("Jumped", this.x, this.y - 10);
         }
+    }
+
+    drawStandingDino(){
+        this.ctx.drawImage(this.img, 0, 0, 57, 60, 10, this.ctx.canvas.height/2, 57, 60);
     }
 
     jump(){
@@ -33,17 +34,13 @@ class Dinosour {
         this.handler = setInterval(()=>{
             if(this.jumpcount < 10 ) this.y -= 10;
             else this.y += 10;
-            this.jumpcount++;
-
-            
+            this.jumpcount++;          
             if (this.jumpcount == 20) {
                 this.stopjump();
             }
         },25)
-
-        
-        
     }
+
     stopjump(){
         clearInterval(this.handler);
         this.jumpcount = 0;

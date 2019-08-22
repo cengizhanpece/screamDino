@@ -5,14 +5,14 @@
     canvasContext = canvas.getContext("2d");
     var spriteImage = new Image();
     spriteImage.src = "dino.png";
-    sprite = 0;
     let Dino = new Dinosour(spriteImage, 10, canvas.height/2, canvasContext);
+    
     window.onload = function () {
-        let Dino = new Dinosour(spriteImage, 0, 0, canvasContext);
-        Dino.draw();
+        Dino.drawStandingDino();
     }
 
     function startr() {
+        let volkan = [];
         console.log("starting...");
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
         
